@@ -18,7 +18,7 @@ use App\Http\Controllers\ParticipationController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home.home');
 });
 
 //Route of etablishments
@@ -49,6 +49,7 @@ Route::delete('/feedback/{id}',[FeedbackController::class, 'destroy']);
 
 //Route of admin
 Route::get('/admin',[AdminController::class,'index']);
+
 
 
 Auth::routes();

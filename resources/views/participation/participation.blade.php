@@ -1,23 +1,17 @@
+<link href="/css/all.css" rel="stylesheet">
+
 @extends('layouts.app')
 
 @section('content')
+<div id="participation">
 @if(session()->has('status'))
   <div class="alert alert-success" role="alert" style="width: 30%;">
     {{session()->get('status')}}
   </div>
 @endif
-<div class="mt-5 text-center">
-	    	<h2 style="font-family: Roboto;font-size: 2rem; font-weight: 900;">
-	    	Add new visitor</h2>
-	    	<div class="container d-flex justify-content-center mb-3">
-	    		<div class="row ">
-					<div class="col" style="border-top:4px #EA4E3C solid;"></div>
-					<div class="col" style="border-top:4px #742F8B solid;"></div>
-					<div class="col" style="border-top:4px #25CBD3 solid;"></div>
-					<div class="col" style="border-top:4px #F9D507 solid;"></div>
-				</div>
-	    	</div>
-	</div>
+<div class="section-title">
+	<p>Nouvelle participation</p>
+</div>
 
 	<div class="container  d-flex justify-content-center">
 		<div class="mt-3 card  p-3 w-75" style="box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);">
@@ -88,13 +82,14 @@
 					      	</div>
 					    </div>
 				  	</div>
-				  	<button type="submit" class="btn btn-dark">Confirm</button>
+				  	<button type="submit" class="btn confirm">Confirm</button>
 					<a href="{{ url('/participation/create')}}">
-                		<button type="button" class="btn btn-outline-danger">Cancel</button>
+                		<button type="button" class="btn btn-outline-danger cancel">Cancel</button>
            			 </a>
 				  	
 		        </form>
 		    </div>
 		</div>
 	</div>
+</div>
 @endsection

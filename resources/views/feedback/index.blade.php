@@ -1,8 +1,9 @@
+<link href="/css/title.css" rel="stylesheet">
 @extends('layouts.app')
 
 @section('content')
-<div class="mt-3">
-<h2 style="font-family: Roboto;font-size: 2rem; font-weight: 900;">List of Feedbacks</h2>
+<div class="section-title">
+			<p>Your Opinion Matter</p>
 </div>
 <table class="table table-bordered">
     <thead>

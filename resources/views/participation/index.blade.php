@@ -1,3 +1,4 @@
+<link href="/css/title.css" rel="stylesheet">
 @extends('layouts.app')
 
 @section('content')

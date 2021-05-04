@@ -1,0 +1,98 @@
+h1, h2, h3, h4, h5, h6, .font-primary {
+    font-family: "Raleway", sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+  }
+/* Participation */
+
+#participation{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+#participation .btn{
+font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 28px;
+  transition: 0.5s;
+  margin-top: 30px;
+  
+}
+
+#participation .confirm{
+    background: #72c02c;
+    color: #fff;
+}
+#participation .confirm:hover{
+    color: #72c02c;
+    background-color: #fff;
+    border-color: #72c02c;
+}
+
+/* Feedback */
+#feedback{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+#feedback .confirm{
+  background: #72c02c;
+  color: #fff;
+}
+#feedback .confirm:hover{
+  color: #72c02c;
+  background-color: #fff;
+  border-color: #72c02c;
+}
+
+
+.section-title {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  
+  .section-title h2 {
+    font-size: 24px;
+    font-weight: 700;
+    padding-bottom: 0;
+    line-height: 1px;
+    margin-bottom: 15px;
+    color: #c2b7b1;
+  }
+  
+  .section-title p {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    position: relative;
+    font-size: 32px;
+    font-weight: 700;
+    color: #4e4039;
+  }
+  
+  .section-title p::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: #72c02c;
+    bottom: 0;
+    left: calc(50% - 30px);
+  }
+  .option{
+    display: flex;
+    flex-direction: row;
+  }
+  @media (max-width: 800px) {
+    .option {
+      flex-direction: column;
+    }
+  }
+@media screen and (max-width: 600px) {
+    .col-sm-2, .col-form-label, .col-sm-10, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+}
+  

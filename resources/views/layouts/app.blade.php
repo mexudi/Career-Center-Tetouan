@@ -3,12 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-
-	<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+   
+	<link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -24,152 +20,131 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <style>
-		@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-		*{
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-        }
-        body{
-            font-family: "Muli", -apple-system, BlinkMacSystemFont, 
-            "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, 
-            "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            background-color: #FAFAF3;
-            
-        }
-        .left{
-            margin-right: 20px;
-        }
-        .right{
-            margin-left: 20px;
-        }
-        .r{
-            float: right;
-        }
-        nav {
-            box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
-        }
-</style>
-    <!--Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
 
+  <!-- Vendor CSS Files -->
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/assets/css/style.css" rel="stylesheet">
+
+  <link href="/css/style.css" rel="stylesheet">
+  
+ 
 </head>
 <body>
-    <div id="app">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-	  <div class="container-fluid">
-	    <a class="navbar-brand" href="https://vcc.careercenter.ma/vcc/" target="_blank">
-	    	<img src="/images/logo_home.png" style="width: 40px;">
-	    </a>
-	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-	      <span class="navbar-toggler-icon"></span>
-	    </button>
-	    <div class="collapse navbar-collapse" id="navbarNav">
-	        <ul class="navbar-nav">
-                <li class="nav-item">
-                <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="{{ url('/participation/create') }}">{{ __('Participation') }}</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="{{url('/feedback/create')}}">Feedback</a>
-                </li>
-	        </ul>
-            <ul class="navbar-nav ml-auto">
-                <!-- Authentication Links -->
-                @guest
-                    @if (Route::has('login'))
-                        <li class="nav-item ">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                    @endif
-                    
-                    @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li>
-                    @endif
-                    @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }}
-                            </a>
+     <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
 
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{url('/admin')}}">
-                                    {{ __('Pannel') }}
-                                </a>
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
+      <div class="logo">
+        <h1 class="text-light"><a href="index.html"><span>Career Center</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                @endguest
-            </ul>
-	    </div>
-	  </div>
-	</nav>
-        <div class="container">
-            <main class="py-4" style="margin-bottom: 150px;">
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="{{url('/home/')}}">Home</a></li>
+          <li><a class="nav-link scrollto" href="{{url('/participation/create')}}">Participation</a></li>
+          <li><a class="nav-link scrollto " href="{{url('/feedback/create')}}">Feedback</a></li>
+          <li><a class="nav-link scrollto" href="{{url('/#about')}}">About Us</a></li>
+          <li><a class="nav-link scrollto" href="{{url('/#services')}}">Services</a></li>
+          <li><a class="nav-link scrollto" href="{{url('/#team')}}">Team</a></li>
+          <li><a class="nav-link scrollto" href="{{url('/#contact')}}">Contact</a></li>
+          @guest
+            @if (Route::has('login'))
+              <li><a class="getstarted scrollto"  href="{{ route('login') }}">{{ __('Login') }}</a></li>
+            @endif
+            @else
+              <li class="nav-item dropdown">
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    {{ Auth::user()->name }}
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                      document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </div>
+              </li>
+          @endguest
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+        <div class="container" style=" margin-top: 100px; margin-bottom: 100px;">
                 @yield('content')
-            </main>
         </div>
 
-        <footer style="background-image: url(/images/footer.png); color: white;">
-		<div class="container-fluid" >
-		<div class="row mb-3">
-			<div class="col-3" style="border-top:4px #EA4E3C solid;"></div>
-			<div class="col-3" style="border-top:4px #742F8B solid;"></div>
-			<div class="col-3" style="border-top:4px #25CBD3 solid;"></div>
-			<div class="col-3" style="border-top:4px #F9D507 solid;"></div>
-		</div>
-	</div>
-		<div class="container-fluid text-center" >
-			<div class="row">
-				<div class="col-4">
-					<h3>Contact: </h3>
-					<p><strong>Tel</strong>: xx.xx.xx.xx.xx</p>
-					<p><strong>Email</strong>: xxxxxx@gmail.com</p>
-				</div>
-				<div class="col-4">
-					<h3 class="mb-4">Social media: </h3>
-					<div class="row d-flex justify-content-center">
-						<div class="col-2">
-							<a href="https://www.linkedin.com/company/career-center-maroc"  target="_blank">
-								<i class="fab fa-linkedin-in" style="font-size: 50px; color: #555;"></i>
-							</a>
-						</div>
-						<div class="col-2">
-							<a href="https://web.facebook.com/Career-Center-OFPPT-T%C3%A9touan-Shore-102157351601766">
-								<i class="fab fa-facebook-f" style="font-size: 50px; color: #555;"></i>
-							</a>
-						</div>
-					</div>
-					<img src="images/career.png">
-				</div>
-			</div>
-		</div>
-		<div class="container-fluid" >
-		<div class="row">
-			<div class="col-3" style="border-top:4px #EA4E3C solid;"></div>
-			<div class="col-3" style="border-top:4px #742F8B solid;"></div>
-			<div class="col-3" style="border-top:4px #25CBD3 solid;"></div>
-			<div class="col-3" style="border-top:4px #F9D507 solid;"></div>
-		</div>
-	</div>
+<!-- ======= Footer ======= -->
+<footer id="footer">
+    <div class="footer-top" style="background-image: linear-gradient(to right top, #25cbd3, #1fc6de, #32c1e6, #4cbaeb, #66b3ec, #8aaef7, #b4a6f7, #dd9ceb, #ff8fc9, #ff9291, #ffae50, #f9d507);">
+      <div class="container">
+        <div class="row">
 
-	</footer>
+          <div class="col-lg-3 col-md-10 footer-contact">
+            <h3>Career Center</h3>
+            <p>
+              tétouan shore, Tétouan 93000, Maroc <br><br>
+              <strong>Phone:</strong> +1 5589 55488 55<br>
+              <strong>Email:</strong> info@example.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-10 footer-links">
+            <h4>Nos Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right c"></i> <a href="#">Me Connaitre</a></li>
+              <li><i class="bx bx-chevron-right e"></i> <a href="#">Expolrer</a></li>
+              <li><i class="bx bx-chevron-right p"></i> <a href="#">Me Preparer</a></li>
+              <li><i class="bx bx-chevron-right l"></i> <a href="#">Me Lancer</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-10 footer-links">
+            <h4>Our Social Networks</h4>
+            <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+            <div class="social-links mt-3">
+              <a href="#" class="facebook"><i class="bx bxl-facebook" style="color: while;"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    
+  </footer><!-- End Footer -->
+  <!-- Vendor JS Files -->
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/assets/vendor/php-email-form/validate.js"></script>
+  <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/assets/js/main.js"></script>
+
+
+
 </body>
 </html>
