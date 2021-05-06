@@ -69,6 +69,7 @@
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{url('/admin')}}" style="color: black;">Pannel</a>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                       document.getElementById('logout-form').submit();">
@@ -87,7 +88,7 @@
 
     </div>
   </header><!-- End Header -->
-        <div class="container" style=" margin-top: 100px; margin-bottom: 100px;">
+        <div>
                 @yield('content')
         </div>
 
