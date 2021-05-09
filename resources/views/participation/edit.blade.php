@@ -36,7 +36,7 @@
 					    <legend class="col-form-label col-sm-2 pt-0" value="{{old('sex',$participation->sex)}}">{{__('Gender')}}</legend>
 					    <div class="col-sm-10">
 					      <div class="form-check">
-					        <input class="form-check-input"  type="radio" name="sex" id="female" value="female" checked @endif>
+					        <input class="form-check-input"  type="radio" name="sex" id="female" value="female" checked >
 					        <label class="form-check-label" for="female">
 					          {{__('Female')}}
 					        </label>

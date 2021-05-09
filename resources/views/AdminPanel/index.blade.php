@@ -10,14 +10,16 @@
         </div>
 
         <div class="row">
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box connaitre-box">
-              <div class="icon"><img src="images/1.png" style="width: 50px; height: 50px;"></div>
-              <h4 class="title"><a href="">Modification</a></h4>
-              <p class="description">Vous pouvez ici modifier les infos de la page d'acceuil</p>
-              <a class="btn-get-started ">Clicker Ici</a>
+          <a href="{{url('/admin/homeInfo')}}">
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+              <div class="icon-box connaitre-box">
+                <div class="icon"><img src="images/1.png" style="width: 50px; height: 50px;"></div>
+                <h4 class="title"><a href="">Modification</a></h4>
+                <p class="description">Vous pouvez ici modifier les infos de la page d'acceuil</p>
+                <a class="btn-get-started ">Clicker Ici</a>
+              </div>
             </div>
-          </div>
+          </a>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box explorer-box">

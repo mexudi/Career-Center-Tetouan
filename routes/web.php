@@ -49,6 +49,9 @@ Route::delete('/feedback/{id}',[FeedbackController::class, 'destroy']);
 
 //Route of admin
 Route::get('/admin',[AdminController::class,'index']);
+Route::get('/admin/homeInfo/',[AdminController::class,'editHome']);
+Route::get('/admin/homeInfo/1/editHome',[AdminController::class,'editHome']);
+Route::put('/admin/homeInfo/1', [ParticipationController::class,'update']);
 
 
 

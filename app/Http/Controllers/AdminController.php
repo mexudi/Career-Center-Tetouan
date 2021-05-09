@@ -106,4 +106,9 @@ class AdminController extends Controller
         $request->session()->flash('status', 'Deleting the etablishment is done');
         return redirect('establishments');
     }
+
+    public function editHome()
+    {
+        return view('AdminPanel.homeEdit');
+    }
 }
